@@ -28,7 +28,7 @@ const Wallpaper = () => {
       <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-4">
         {wallpapers.map((element, i) => {
           return (
-            <div>
+            <div key={i}>
               <img
                 className="h-auto max-w-full rounded-lg"
                 src={element.previewURL}
