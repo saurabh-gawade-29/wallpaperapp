@@ -1,10 +1,8 @@
-import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import { serviceCallGet } from "../Helper/Service";
 
-let baseURL =
-  "https://pixabay.com/api/?key=40987026-d6665d5f7d2e023b7e3287980&image_type=photo&per_page=200&safesearch=true";
+let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=true`;
 
 const Trending = () => {
   //! Use Effect
@@ -13,7 +11,7 @@ const Trending = () => {
   const getWallpaper = async () => {
     debugger;
     let response = await serviceCallGet(baseURL);
-    let beforeSorting = response.data.hits;
+    let beforeSorting = await response.data.hits;
     let afterSorting = beforeSorting.sort((a, b) => {
       return a.downloads - b.downloads;
     });
