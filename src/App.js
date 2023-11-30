@@ -4,6 +4,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Trending from "./components/Trending";
 import Wallpaper from "./components/Wallpaper";
+import GLoader from "./components/GLoader ";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="wallpaper" element={<Wallpaper />} />
           <Route path="about" element={<About />} />
         </Routes>
+        <GLoader />
       </div>
     </div>
   );

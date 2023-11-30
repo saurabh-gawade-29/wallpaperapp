@@ -1,29 +1,24 @@
 import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
+import { serviceCallGet } from "../Helper/Service";
+
+let baseURL =
+  "https://pixabay.com/api/?key=40987026-d6665d5f7d2e023b7e3287980&image_type=photo";
 
 const Trending = () => {
   //! Use Effect
   const [wallpapers, setWallpapers] = useState([]);
   //! Functions
-  const getWallpaper = () => {
+  const getWallpaper = async () => {
     debugger;
-    axios
-      .get(
-        "https://pixabay.com/api/?key=40987026-d6665d5f7d2e023b7e3287980&image_type=photo"
-      )
-      .then((response) => {
-        console.log(response, "Wallpapers");
-        let beforeSorting = response.data.hits;
-        let afterSorting = beforeSorting.sort((a, b) => {
-          return b.downloads - a.downloads;
-        });
-        const top2Records = afterSorting.slice(0, 10);
-        setWallpapers(top2Records);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    let response = await serviceCallGet(baseURL);
+    let beforeSorting = response.data.hits;
+    let afterSorting = beforeSorting.sort((a, b) => {
+      return a.downloads - b.downloads;
+    });
+    let topTen = afterSorting.slice(0, 10);
+    setWallpapers(topTen);
   };
   //! EntryPoint
   useEffect(() => {
