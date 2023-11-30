@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { serviceCallGet } from "../Helper/Service";
 
-let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=true`;
+let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=false`;
 
 const Trending = () => {
   //! Use Effect
