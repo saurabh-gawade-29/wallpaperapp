@@ -3,7 +3,7 @@ import downloadImg from "../Assets/img/downloads.png";
 import viewImg from "../Assets/img/view.png";
 
 const Wallcard = ({ data }) => {
-    debugger
+  debugger;
   const [modal, setModal] = useState(false);
   const openModal = () => {
     setModal(!modal);
@@ -23,20 +23,20 @@ const Wallcard = ({ data }) => {
         />
         <div className="absolute top-2 eyeIcon w-full">
           <div className="wrapImg flex justify-start">
-            <figcaption className="bg-zinc-50 flex items-center space-x-4 p-2 mx-2 rounded-lg">
+            <figcaption className="bg-zinc-50 flex items-center space-x-3 p-2 mx-2 rounded-lg">
               <img
                 src={data.userImageURL}
                 alt=""
-                className="flex-none w-14 h-14 rounded-full object-cover"
+                className="flex-none w-12 h-12 rounded-full object-cover"
                 loading="lazy"
                 decoding="async"
               />
               <div className="flex-auto">
-                <div className="text-base text-black-900 font-semibold dark:text-black-300">
-                  <span className="absolute inset-0"></span>
+                <div className="text-sm text-black-900 font-semibold dark:text-black-300">
+                  <span className="absolute inset-0 text-xs"></span>
                   {data.user}
                 </div>
-                <div className="mt-0.5 truncate ">User Id: {data.user_id}</div>
+                <div className="mt-0.5 truncate text-xs">User Id: {data.user_id}</div>
               </div>
             </figcaption>
           </div>
@@ -44,15 +44,15 @@ const Wallcard = ({ data }) => {
         <div className="absolute bottom-2 eyeIcon w-full">
           <div className="wrapImg flex justify-end">
             <button
-              className="bg-zinc-50 mx-1 block focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center w-16 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+              className="bg-zinc-50 mx-1 block focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-3 py-3 text-center w-12 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
               data-modal-target="default-modal"
               data-modal-toggle="default-modal"
-              onClick={()=> openInNewTab(data.largeImageURL)}
+              onClick={() => openInNewTab(data.largeImageURL)}
             >
               <img src={downloadImg} alt="" />
             </button>
             <button
-              className="bg-zinc-50 mx-1 block focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center w-16 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+              className="bg-zinc-50 mx-1 block focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-3 py-3 text-center w-12 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
               data-modal-target="default-modal"
               data-modal-toggle="default-modal"
               onClick={openModal}
