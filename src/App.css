@@ -28,8 +28,6 @@
   /* CSS rules here will only apply on screens 1024px wide or larger */
   .eyeParent .eyeIcon{
     display: none;
-    transition-property: display;
-    transition-duration: 5s;
   }
   
   .eyeParent:hover .eyeIcon{
