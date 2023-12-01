@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
-  const [show, setShow] = useState(true)
-  const openNav = ()=> {
-    setShow(!show)
-  }
+  const [show, setShow] = useState(true);
+  const openNav = () => {
+    setShow(!show);
+  };
   return (
     <>
       <nav className="bg-gray-800">
@@ -61,7 +61,9 @@ const Navbar = () => {
             </div>
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex flex-shrink-0 items-center">
-                <img className="h-8 w-auto" src={Logo} alt="Wallpaper" />
+                <NavLink to="/">
+                  <img className="h-8 w-auto" src={Logo} alt="Wallpaper" />
+                </NavLink>
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
@@ -95,7 +97,11 @@ const Navbar = () => {
         </div>
 
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-        <div className="sm:hidden" id="mobile-menu" style={{display: show && "none"}}>
+        <div
+          className="sm:hidden"
+          id="mobile-menu"
+          style={{ display: show && "none" }}
+        >
           <div className="space-y-1 px-2 pb-3 pt-2">
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
             <NavLink
