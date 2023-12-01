@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { serviceCallGet } from "../Helper/Service";
+import Wallcard from "./Wallcard";
 
 let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=true`;
 const Wallpaper = () => {
@@ -18,17 +19,9 @@ const Wallpaper = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4">
         {wallpapers.map((element, i) => {
-          return (
-            <div key={i}>
-              <img
-                className="h-auto max-w-full rounded-lg w-full h-full object-cover"
-                src={element.webformatURL}
-                alt=""
-              />
-            </div>
-          );
+          return <Wallcard data={element} key={i} />;
         })}
       </div>
     </div>
