@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { serviceCallGet } from "../Helper/Service";
 import downloadImg from "../Assets/img/downloads.png";
+import viewImg from "../Assets/img/view.png";
 
 let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=false&safesearch=true`;
 
@@ -50,15 +51,44 @@ const Trending = () => {
                 src={element.webformatURL}
                 alt=""
               />
-              <div className="absolute right-2 top-2 eyeIcon">
-                <button
-                  className="block text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center w-20"
-                  data-modal-target="default-modal"
-                  data-modal-toggle="default-modal"
-                  onClick={openModal}
-                >
-                  <img src={downloadImg} alt="" />
-                </button>
+              <div className="absolute top-2 eyeIcon w-full">
+                <div className="wrapImg flex justify-start">
+                  <figcaption class="bg-zinc-50 flex items-center space-x-4 p-2 mx-2 rounded-lg">
+                    <img
+                      src={element.userImageURL}
+                      alt=""
+                      class="flex-none w-14 h-14 rounded-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div class="flex-auto">
+                      <div class="text-base text-black-900 font-semibold dark:text-black-300">
+                        <span class="absolute inset-0"></span>
+                        {element.user}
+                      </div>
+                      <div class="mt-0.5">User Id: {element.user_id}</div>
+                    </div>
+                  </figcaption>
+                </div>
+              </div>
+              <div className="absolute bottom-2 eyeIcon w-full">
+                <div className="wrapImg flex justify-end">
+                  <button
+                    className="bg-zinc-50 mx-1 block focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center w-16 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    data-modal-target="default-modal"
+                    data-modal-toggle="default-modal"
+                  >
+                    <img src={downloadImg} alt="" />
+                  </button>
+                  <button
+                    className="bg-zinc-50 mx-1 block focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center w-16 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    data-modal-target="default-modal"
+                    data-modal-toggle="default-modal"
+                    onClick={openModal}
+                  >
+                    <img src={viewImg} alt="" />
+                  </button>
+                </div>
               </div>
             </div>
           );

@@ -20,8 +20,11 @@
 /* image */
 .eyeParent .eyeIcon{
   display: none;
+  transition-property: display;
+  transition-duration: 5s;
 }
 
 .eyeParent:hover .eyeIcon{
   display: block;
+  transition-duration: 10s;
 }
