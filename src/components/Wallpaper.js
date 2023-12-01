@@ -2,8 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { serviceCallGet } from "../Helper/Service";
 
-let baseURL =
-  "https://pixabay.com/api/?key=40987026-d6665d5f7d2e023b7e3287980&image_type=photo&per_page=50";
+let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=false`;
 const Wallpaper = () => {
   //! Use Effect
   const [wallpapers, setWallpapers] = useState([]);
