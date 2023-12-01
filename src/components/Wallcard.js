@@ -17,7 +17,7 @@ const Wallcard = ({ data }) => {
     <div>
       <div className="relative eyeParent">
         <img
-          className="h-auto max-w-full rounded-lg w-full h-80 min-h-80 max-h-80 object-cover"
+          className="h-auto max-w-full rounded-lg w-full h-80 object-cover imagePreview"
           src={data.webformatURL}
           alt=""
         />
