@@ -42,7 +42,7 @@ const Wallcard = ({ data }) => {
           </div>
         </div>
         <div className="absolute bottom-2 eyeIcon w-full">
-          <div className="wrapImg flex justify-end">
+          <div className="wrapButton flex justify-end">
             <button
               className="bg-zinc-50 mx-1 block focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-3 py-3 text-center w-12 rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
               data-modal-target="default-modal"

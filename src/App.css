@@ -23,13 +23,23 @@
   max-height: 20rem;
 }
 
-.eyeParent .eyeIcon{
-  display: none;
-  transition-property: display;
-  transition-duration: 5s;
+
+@media (min-width: 1024px) {
+  /* CSS rules here will only apply on screens 1024px wide or larger */
+  .eyeParent .eyeIcon{
+    display: none;
+    transition-property: display;
+    transition-duration: 5s;
+  }
+  
+  .eyeParent:hover .eyeIcon{
+    display: block;
+    transition-duration: 10s;
+  }
 }
 
-.eyeParent:hover .eyeIcon{
-  display: block;
-  transition-duration: 10s;
+@media (max-width: 1024px) {
+  .wrapImg{
+    display: none;
+  }
 }
