@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { serviceCallGet } from "../Helper/Service";
 
-let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=false`;
+let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=true`;
 const Wallpaper = () => {
   //! Use Effect
   const [wallpapers, setWallpapers] = useState([]);
@@ -23,7 +23,7 @@ const Wallpaper = () => {
           return (
             <div key={i}>
               <img
-                className="h-auto max-w-full rounded-lg w-full h-full object-fill"
+                className="h-auto max-w-full rounded-lg w-full h-full object-cover"
                 src={element.webformatURL}
                 alt=""
               />
