@@ -129,28 +129,30 @@ const Wallcard = ({ data }) => {
                 </figcaption>
               </div>
               <div className="p-2 md:p-5 lg:p-5 space-y-4">
-                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
-                  <span className="font-semibold">Image Width: </span>
-                  <span className="text-white">{data.imageWidth}</span>
-                </p>
-                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
-                  <span className="font-semibold">image Height: </span>
-                  <span className="text-white">{data.imageHeight}</span>
-                </p>
+                <div className="p-2 mx-2">
+                  <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Image Width: </span>
+                    <span className="text-white">{data.imageWidth}</span>
+                  </p>
+                  <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">image Height: </span>
+                    <span className="text-white">{data.imageHeight}</span>
+                  </p>
 
-                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
-                  <span className="font-semibold">Image Size: </span>
-                  <span className="text-white">{data.imageSize}</span>
-                </p>
+                  <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Image Size: </span>
+                    <span className="text-white">{data.imageSize}</span>
+                  </p>
 
-                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
-                  <span className="font-semibold">Downloads: </span>
-                  <span className="text-white">{data.downloads}</span>
-                </p>
-                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
-                  <span className="font-semibold">Likes: </span>
-                  <span className="text-white">{data.likes}</span>
-                </p>
+                  <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Downloads: </span>
+                    <span className="text-white">{data.downloads}</span>
+                  </p>
+                  <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Likes: </span>
+                    <span className="text-white">{data.likes}</span>
+                  </p>
+                </div>
               </div>
             </div>
 
