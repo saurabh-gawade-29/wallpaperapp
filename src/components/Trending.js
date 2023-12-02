@@ -29,15 +29,15 @@ const Trending = () => {
   return (
     <>
       <div className="block p-6 bg-gray-800 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-4">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
           Here You Get TOP 21 Editor's Choice Wallapers
         </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
+        <p className="font-normal text-gray-400">
           There are numerous wallpaper apps available that offer beautiful and
           high-quality wallpapers. Here are some of the editors choice best
           wallpaper apps:
         </p>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
+        <p className="font-normal text-gray-400">
           In summary, there are numerous good wallpaper apps available that
           offer beautiful and unique wallpapers across different themes.
           Choosing an app depends on the type of wallpapers you prefer - dark,
