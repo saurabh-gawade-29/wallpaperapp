@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Trending from "./components/Trending";
 import Wallpaper from "./components/Wallpaper";
 import GLoader from "./components/GLoader ";
+import ScrolTop from "./components/ScrolTop";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="about" element={<About />} />
         </Routes>
         <GLoader />
+        <ScrolTop />
       </div>
     </div>
   );
