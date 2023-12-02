@@ -36,7 +36,9 @@ const Wallcard = ({ data }) => {
                   <span className="absolute inset-0 text-xs"></span>
                   {data.user}
                 </div>
-                <div className="mt-0.5 truncate text-xs">User Id: {data.user_id}</div>
+                <div className="mt-0.5 truncate text-xs">
+                  User Id: {data.user_id}
+                </div>
               </div>
             </figcaption>
           </div>
@@ -73,7 +75,7 @@ const Wallcard = ({ data }) => {
           <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Terms of Service
+                Free for use under the Pixabay Content License
               </h3>
               <button
                 onClick={openModal}
@@ -99,19 +101,57 @@ const Wallcard = ({ data }) => {
               </button>
             </div>
 
-            <div className="p-4 md:p-5 space-y-4">
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                With less than a month to go before the European Union enacts
-                new consumer privacy laws for its citizens, companies around the
-                world are updating their terms of service agreements to comply.
-              </p>
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                The European Union’s General Data Protection Regulation
-                (G.D.P.R.) goes into effect on May 25 and is meant to ensure a
-                common set of data rights in the European Union. It requires
-                organizations to notify users as soon as possible of high-risk
-                data breaches that could personally affect them.
-              </p>
+            <div className="p-4 md:p-5 space-y-4 bg-white">
+              <img
+                className="h-auto max-w-full rounded-lg w-full h-80 object-contain imagePreview"
+                src={data.webformatURL}
+                alt=""
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+              <div className="p-2 md:p-5 lg:p-5 space-y-4">
+                <figcaption className="flex bg-gray-900 space-x-3 p-2 mx-2 rounded-lg">
+                  <img
+                    src={data.userImageURL}
+                    alt=""
+                    className="flex-none w-16 h-16 rounded-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="text-sm text-white">
+                    <div className="truncate font-semibold">
+                      <span>{data.user}</span>
+                    </div>
+                    <div className="truncate text-xs">
+                      <span>{data.user_id}</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </div>
+              <div className="p-2 md:p-5 lg:p-5 space-y-4">
+                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                  <span className="font-semibold">Image Width: </span>
+                  <span className="text-white">{data.imageWidth}</span>
+                </p>
+                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                  <span className="font-semibold">image Height: </span>
+                  <span className="text-white">{data.imageHeight}</span>
+                </p>
+
+                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                  <span className="font-semibold">Image Size: </span>
+                  <span className="text-white">{data.imageSize}</span>
+                </p>
+
+                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                  <span className="font-semibold">Downloads: </span>
+                  <span className="text-white">{data.downloads}</span>
+                </p>
+                <p className="leading-relaxed text-gray-500 dark:text-gray-400">
+                  <span className="font-semibold">Likes: </span>
+                  <span className="text-white">{data.likes}</span>
+                </p>
+              </div>
             </div>
 
             <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
@@ -119,15 +159,16 @@ const Wallcard = ({ data }) => {
                 data-modal-hide="default-modal"
                 type="button"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={() => openInNewTab(data.largeImageURL)}
               >
-                I accept
+                Download
               </button>
               <button
                 data-modal-hide="default-modal"
                 onClick={openModal}
                 className="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
               >
-                Decline
+                Close
               </button>
             </div>
           </div>
