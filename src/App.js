@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="container mx-auto my-4 px-4">
+      <div className="container mx-auto mt-20 mb-4 px-4">
         <Routes>
           <Route path="/" element={<Trending />} />
           <Route path="wallpaper" element={<Wallpaper />} />

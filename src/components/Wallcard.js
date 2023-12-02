@@ -113,7 +113,7 @@ const Wallcard = ({ data }) => {
                 <figcaption className="flex bg-gray-900 space-x-3 p-2 mx-2 rounded-lg">
                   <img
                     src={data.userImageURL}
-                    alt=""
+                    alt="User"
                     className="flex-none w-16 h-16 rounded-full object-cover"
                     loading="lazy"
                     decoding="async"

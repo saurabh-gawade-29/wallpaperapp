@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { serviceCallGet } from "../Helper/Service";
 import Wallcard from "./Wallcard";
 
-let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&safesearch=false&editors_choice=true`;
+let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&editors_choice=true`;
 
 const Trending = () => {
   //! Use Effect
@@ -34,8 +34,7 @@ const Trending = () => {
         </h5>
         <p className="font-normal text-gray-400">
           There are numerous wallpaper apps available that offer beautiful and
-          high-quality wallpapers. Here are some of the editors choice best
-          wallpaper apps:
+          high-quality wallpapers. Here are some of the editors choice best:
         </p>
         <p className="font-normal text-gray-400">
           In summary, there are numerous good wallpaper apps available that
