@@ -65,6 +65,7 @@ const Wallpaper = () => {
               </svg>
             </div>
             <input
+              autoComplete="off"
               value={searchwall}
               onChange={(e) => setSearchwall(e.target.value)}
               type="search"
