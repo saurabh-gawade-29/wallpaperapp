@@ -4,12 +4,12 @@ import { serviceCallGet } from "../Helper/Service";
 import Wallcard from "./Wallcard";
 import { Link } from "react-router-dom";
 
-let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&editors_choice=true`;
-
 const Trending = () => {
   //! Use Effect
   const [wallpapers, setWallpapers] = useState([]);
+  const [selectedValue, setSelectedValue] = useState("");
 
+  let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&image_type=photo&per_page=200&editors_choice=true&order=${selectedValue}`;
   //! Functions
   const getWallpaper = async () => {
     debugger;
@@ -26,7 +26,14 @@ const Trending = () => {
   useEffect(() => {
     debugger;
     getWallpaper();
-  }, []);
+  }, [selectedValue]);
+
+  //! Filter
+  const handleSelectChange = (event) => {
+    const value = event.target.value;
+    setSelectedValue(value);
+  };
+
   return (
     <>
       <div className="block p-6 bg-gray-800 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-4">
@@ -55,14 +62,26 @@ const Trending = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>
           </button>
         </Link>
+      </div>
+
+      <div className="dropDown my-4 flex justify-end">
+        <select
+          id="countries"
+          class="p-2 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+          value={selectedValue}
+          onChange={handleSelectChange}
+        >
+          <option value="popular">Popular</option>
+          <option value="latest">Latest</option>
+        </select>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">

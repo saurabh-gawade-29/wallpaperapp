@@ -127,16 +127,24 @@ const Wallcard = ({ data }) => {
                     </div>
                   </div>
                 </figcaption>
+                <div className="">
+                  <button
+                    className="bg-sky-700 text-white rounded-lg px-2 py-2 mx-2"
+                    onClick={() => openInNewTab(data.pageURL)}
+                  >
+                    Visit Pixabay
+                  </button>
+                </div>
               </div>
               <div className="p-2 md:p-5 lg:p-5 space-y-4">
                 <div className="p-2 mx-2">
                   <p className="leading-relaxed text-gray-500 dark:text-gray-400">
                     <span className="font-semibold">Image Width: </span>
-                    <span className="text-white">{data.imageWidth}</span>
+                    <span className="text-white">{data.imageWidth} px</span>
                   </p>
                   <p className="leading-relaxed text-gray-500 dark:text-gray-400">
                     <span className="font-semibold">image Height: </span>
-                    <span className="text-white">{data.imageHeight}</span>
+                    <span className="text-white">{data.imageHeight} px</span>
                   </p>
 
                   <p className="leading-relaxed text-gray-500 dark:text-gray-400">
