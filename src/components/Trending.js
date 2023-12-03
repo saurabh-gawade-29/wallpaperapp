@@ -18,7 +18,7 @@ const Trending = () => {
     let afterSorting = beforeSorting.sort((a, b) => {
       return a.downloads - b.downloads;
     });
-    let topTen = afterSorting.slice(0, 21);
+    let topTen = afterSorting.slice(0, 51);
     setWallpapers(topTen);
   };
 
@@ -38,7 +38,7 @@ const Trending = () => {
     <>
       <div className="block p-6 bg-gray-800 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-4">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
-          Here You Get TOP 21 Editor's Choice Wallapers
+          Here You Get TOP 50 Editor's Choice Wallapers
         </h5>
         <p className="font-normal text-gray-400">
           There are numerous wallpaper apps available that offer beautiful and
