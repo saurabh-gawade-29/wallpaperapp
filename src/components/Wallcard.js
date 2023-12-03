@@ -149,7 +149,7 @@ const Wallcard = ({ data }) => {
 
                   <p className="leading-relaxed text-gray-500 dark:text-gray-400">
                     <span className="font-semibold">Image Size: </span>
-                    <span className="text-white">{data.imageSize}</span>
+                    <span className="text-white">{data.imageSize} bytes</span>
                   </p>
 
                   <p className="leading-relaxed text-gray-500 dark:text-gray-400">
