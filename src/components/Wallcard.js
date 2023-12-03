@@ -101,7 +101,7 @@ const Wallcard = ({ data }) => {
               </button>
             </div>
 
-            <div className="p-4 md:p-5 space-y-4 bg-white">
+            <div className="p-4 md:p-5 space-y-4 bg-white border-2 border-gray-600">
               <img
                 className="h-auto max-w-full rounded-lg w-full h-80 object-contain imagePreview"
                 src={data.webformatURL}

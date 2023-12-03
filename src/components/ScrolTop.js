@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 const myStyle = {
   position: "Fixed",
-  bottom: "2rem",
-  right: "1rem",
+  bottom: "5rem",
+  right: "2rem",
   fontSize: "5rem",
-  zIndex: "999",
+  zIndex: "20",
   cursor: "pointer",
 };
 const ScrolTop = () => {
