@@ -134,6 +134,14 @@ const Wallcard = ({ data }) => {
                   >
                     Visit Pixabay
                   </button>
+                  <button
+                    className="bg-sky-700 text-white rounded-lg px-2 py-2 mx-2"
+                    onClick={() => {
+                      navigator.clipboard.writeText(data.largeImageURL);
+                    }}
+                  >
+                    Copy URL
+                  </button>
                 </div>
               </div>
               <div className="p-2 md:p-5 lg:p-5 space-y-4">
