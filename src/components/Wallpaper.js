@@ -8,9 +8,10 @@ const Wallpaper = () => {
   //! States
   const [wallpapers, setWallpapers] = useState([]);
   const [searchwall, setSearchwall] = useState([]);
+  const [safe, setSafe] = useState(false);
   const [myText, setMyText] = useState("");
 
-  let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&q=${myText}&image_type=photo&per_page=200`;
+  let baseURL = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&q=${myText}&image_type=photo&per_page=200&safesearch=${safe}`;
   //! Search
   const handleURL = (e) => {
     debugger;
@@ -30,11 +31,17 @@ const Wallpaper = () => {
     }
   };
 
+  //! Handle Safe Search
+  const handleSelectChange = (event) => {
+    let check = event.target.value;
+    setSafe(check);
+  };
+
   //! Use Effect
   useEffect(() => {
     debugger;
     getWallpaper();
-  }, [myText]);
+  }, [myText, safe]);
 
   return (
     <div>
@@ -82,6 +89,17 @@ const Wallpaper = () => {
             </button>
           </div>
         </form>
+        <div className="dropDown my-4 flex justify-end">
+          <select
+            id="countries"
+            className="p-2 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            value={safe}
+            onChange={handleSelectChange}
+          >
+            <option value={false}>Safe Search Off</option>
+            <option value={true}>Safe Search On</option>
+          </select>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {wallpapers.map((element, i) => {

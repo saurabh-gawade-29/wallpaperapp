@@ -4,13 +4,20 @@ import viewImg from "../Assets/img/view.png";
 
 const Wallcard = ({ data }) => {
   debugger;
+  let intiState = "Copy URL";
   const [modal, setModal] = useState(false);
+  const [copy, setCopy] = useState(intiState);
   const openModal = () => {
     setModal(!modal);
   };
   const openInNewTab = (url) => {
     debugger;
     window.open(url, "_blank", "noreferrer");
+  };
+
+  const handleCopy = () => {
+    setCopy("Copied!");
+    setTimeout(() => setCopy(intiState), 3000);
   };
 
   return (
@@ -138,9 +145,10 @@ const Wallcard = ({ data }) => {
                     className="bg-sky-700 text-white rounded-lg px-2 py-2 mx-2"
                     onClick={() => {
                       navigator.clipboard.writeText(data.largeImageURL);
+                      handleCopy();
                     }}
                   >
-                    Copy URL
+                    {copy}
                   </button>
                 </div>
               </div>
