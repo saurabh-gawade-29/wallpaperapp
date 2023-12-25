@@ -6,6 +6,7 @@ import Trending from "./components/Trending";
 import Wallpaper from "./components/Wallpaper";
 import GLoader from "./components/GLoader ";
 import ScrolTop from "./components/ScrolTop";
+import Videos from "./components/Videos";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Trending />} />
           <Route path="wallpaper" element={<Wallpaper />} />
+          <Route path="videos" element={<Videos />} />
           <Route path="about" element={<About />} />
         </Routes>
         <GLoader />

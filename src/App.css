@@ -18,26 +18,24 @@
 }
 
 /* image */
-.imagePreview{
+.imagePreview {
   min-height: 20rem;
   max-height: 20rem;
 }
 
-
 @media (min-width: 1024px) {
   /* CSS rules here will only apply on screens 1024px wide or larger */
-  .eyeParent .eyeIcon{
+  .eyeParent .eyeIcon {
     display: none;
   }
-  
-  .eyeParent:hover .eyeIcon{
+
+  .eyeParent:hover .eyeIcon {
     display: block;
-    transition-duration: 10s;
   }
 }
 
 @media (max-width: 1024px) {
-  .wrapImg{
+  .wrapImg {
     display: none;
   }
 }
